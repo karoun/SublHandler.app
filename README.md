@@ -35,4 +35,4 @@ Also, make sure that you have both Python and the [`subl` alias installed](http:
 
 Icon: [Elliot Jackson](http://drbl.in/gkCw) via [Alex MacCaw](http://blog.alexmaccaw.com/sublime-text)
 
-Idea: [Andrew Sutherland](//:github.com/asuth)
+Idea: [Andrew Sutherland](//github.com/asuth)
