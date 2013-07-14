@@ -4,21 +4,23 @@ A small app to send `subl://` URLs to Sublime Text 2, written using AppleScript 
 
 ## URL Scheme
 
-SublHandler.app supports the following URL scheme:
+SublHandler.app supports the [same URL scheme as TextMate](http://manual.macromates.com/en/using_textmate_from_terminal.html):
 
 - Protocol: `subl://`
-- Path: Any local file or directory; supports `~`, but not `..`
-- Params (optional): 
-	- Line: Defaults to 1
-	- Column: Defaults to 1
+- Path: `open`
+- Params:
+	- URL: Any local file or directory; supports `~`, but not `..`, `file://` is optional
+	- Line (optional): Defaults to 1
+	- Column (optional): Defaults to 1
 
 All together now:
 
 ```
-subl://~/Sites/project/
-subl:///etc/paths?line=2
-subl:///etc/paths?column=5
-subl:///etc/paths?line=2&column=25
+subl://open/?url=~/Sites/project/
+subl://open/?url=file://~/Sites/project/
+subl://open/?url=/etc/paths&line=2
+subl://open/?url=/etc/paths&column=5
+subl://open/?url=/etc/paths&line=2&column=25
 ```
 
 Note that the `line` and `column` parameters will not apply to directories, for obvious reasons.
