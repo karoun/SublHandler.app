@@ -2,7 +2,7 @@
 
 import sys
 from urlparse import urlsplit, parse_qs
-from os.path import exists, expanduser
+from os.path import exists, expanduser, isdir
 from subprocess import call
 
 if len(sys.argv) != 2:
@@ -19,7 +19,7 @@ fileName = expanduser(parsed.netloc + parsed.path)
 if not exists(fileName):
     sys.exit(1)
 
-if fileName[-1] != '/':
+if not isdir(fileName):
     params = parse_qs(parsed.query)
     line = int(params.get('line', [1])[0])
     column = int(params.get('column', [1])[0])
